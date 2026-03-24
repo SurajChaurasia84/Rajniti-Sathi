@@ -33,7 +33,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.20.2
-  flutter_windowmanager: ^0.2.0
+  flutter_windowmanager:
+    path: packages/flutter_windowmanager
 
   cupertino_icons: ^1.0.8
 
