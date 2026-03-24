@@ -13,8 +13,22 @@ import 'package:rajniti_sathi/utils/localization.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting();
+  await _configureSystemUi();
   await _secureScreen();
   runApp(RajnitiSathiApp(controller: AppController()));
+}
+
+Future<void> _configureSystemUi() async {
+  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.light,
+      systemNavigationBarColor: AppColors.background,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ),
+  );
 }
 
 Future<void> _secureScreen() async {
@@ -64,7 +78,13 @@ class RajnitiSathiApp extends StatelessWidget {
               centerTitle: true,
               elevation: 0,
               scrolledUnderElevation: 0,
-              systemOverlayStyle: SystemUiOverlayStyle.dark,
+              systemOverlayStyle: SystemUiOverlayStyle(
+                statusBarColor: Colors.transparent,
+                statusBarIconBrightness: Brightness.dark,
+                statusBarBrightness: Brightness.light,
+                systemNavigationBarColor: AppColors.background,
+                systemNavigationBarIconBrightness: Brightness.dark,
+              ),
             ),
             cardTheme: CardThemeData(
               elevation: 8,
