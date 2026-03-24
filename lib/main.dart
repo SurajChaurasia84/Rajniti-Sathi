@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
-import 'package:intl/date_symbol_data_local.dart';
 import 'package:rajniti_sathi/screens/home_screen.dart';
 import 'package:rajniti_sathi/screens/splash_screen.dart';
 import 'package:rajniti_sathi/utils/app_colors.dart';
@@ -12,14 +11,13 @@ import 'package:rajniti_sathi/utils/localization.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initializeDateFormatting();
-  await _configureSystemUi();
-  await _secureScreen();
+  _configureSystemUi();
   runApp(RajnitiSathiApp(controller: AppController()));
+  _secureScreen();
 }
 
-Future<void> _configureSystemUi() async {
-  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+void _configureSystemUi() {
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -146,8 +144,10 @@ class AppController extends ChangeNotifier {
 
   final List<PosterItem> _posters;
   String _languageCode = 'en';
+  int _selectedDateIndex = 0;
 
   String get languageCode => _languageCode;
+  int get selectedDateIndex => _selectedDateIndex;
   AppLocalizations get localizations => AppLocalizations(_languageCode);
   List<PosterItem> get posters => List.unmodifiable(_posters);
 
@@ -156,6 +156,14 @@ class AppController extends ChangeNotifier {
       return;
     }
     _languageCode = languageCode;
+    notifyListeners();
+  }
+
+  void selectDateIndex(int index) {
+    if (_selectedDateIndex == index) {
+      return;
+    }
+    _selectedDateIndex = index;
     notifyListeners();
   }
 
