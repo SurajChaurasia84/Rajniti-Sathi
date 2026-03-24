@@ -116,9 +116,7 @@ class HomeScreen extends StatelessWidget {
                             final localeCode = controller.languageCode;
                             final isSelected =
                                 controller.selectedDateIndex == index;
-                            final label = index == 0
-                                ? localization.translate('today')
-                                : _formatDate(date, localeCode);
+                            final label = _formatDate(date, localeCode);
 
                             return Expanded(
                               child: Padding(
@@ -137,7 +135,12 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 24),
                         Text(
-                          localization.translate('posterFeed'),
+                          _formatDate(
+                            DateTime.now().add(
+                              Duration(days: controller.selectedDateIndex),
+                            ),
+                            controller.languageCode,
+                          ),
                           style: theme.textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.w700,
                           ),
