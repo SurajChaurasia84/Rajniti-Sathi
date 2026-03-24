@@ -1,0 +1,19 @@
+name: flutter_windowmanager
+description: Local patched Flutter plugin for Android window flags.
+version: 0.2.0+local
+publish_to: 'none'
+
+environment:
+  sdk: ^3.0.0
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: io.adaptant.labs.flutter_windowmanager
+        pluginClass: FlutterWindowManagerPlugin
