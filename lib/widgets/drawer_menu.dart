@@ -13,8 +13,8 @@ class DrawerMenu extends StatelessWidget {
 
     final items = [
       _DrawerItem(
-        icon: Icons.home_rounded,
-        label: localization.translate('home'),
+        icon: Icons.person,
+        label: localization.translate('profile'),
       ),
       _DrawerItem(
         icon: Icons.workspace_premium_rounded,

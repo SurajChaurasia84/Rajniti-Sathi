@@ -100,6 +100,10 @@ class AppLocalizations {
       'en': 'Home',
       'hi': '\u0939\u094b\u092e',
     },
+    'profile': {
+      'en': 'Profile',
+      'hi': '\u092a\u094d\u0930\u094b\u092b\u093e\u0907\u0932',
+    },
     'premium': {
       'en': 'Premium',
       'hi': '\u092a\u094d\u0930\u0940\u092e\u093f\u092f\u092e',
