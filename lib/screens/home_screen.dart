@@ -104,7 +104,7 @@ class HomeScreen extends StatelessWidget {
                         const SizedBox(height: 12),
                         LayoutBuilder(
                           builder: (context, constraints) {
-                            const gap = 4.0;
+                            const gap = 3.0;
                             final chipWidth =
                                 (constraints.maxWidth - (gap * 6)) / 7;
 
@@ -138,19 +138,6 @@ class HomeScreen extends StatelessWidget {
                               }),
                             );
                           },
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          _weekdayFullLabel(
-                            DateTime.now().add(
-                              Duration(days: controller.selectedDateIndex),
-                            ),
-                            controller.languageCode,
-                          ),
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: AppColors.textSecondary,
-                            fontWeight: FontWeight.w600,
-                          ),
                         ),
                         const SizedBox(height: 24),
                         Text(
@@ -213,7 +200,7 @@ class _DateChip extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         onTap: onTap,
         child: Ink(
-          height: 48,
+          height: 50,
           decoration: BoxDecoration(
             color: isSelected
                 ? AppColors.primary.withValues(alpha: 0.08)
@@ -225,7 +212,7 @@ class _DateChip extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 1.5, vertical: 2),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -235,7 +222,7 @@ class _DateChip extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 10,
+                    fontSize: 13,
                     fontWeight: FontWeight.w700,
                     color: isSelected
                         ? AppColors.primary
@@ -250,7 +237,7 @@ class _DateChip extends StatelessWidget {
                   softWrap: false,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 8,
+                    fontSize: 11,
                     fontWeight: FontWeight.w600,
                     color: isSelected
                         ? AppColors.primary
@@ -273,11 +260,6 @@ String _formatDate(DateTime date, String languageCode) {
 
 String _weekdayShortLabel(DateTime date, String languageCode) {
   final weekdays = languageCode == 'hi' ? _weekdaysHi : _weekdaysEn;
-  return weekdays[date.weekday - 1];
-}
-
-String _weekdayFullLabel(DateTime date, String languageCode) {
-  final weekdays = languageCode == 'hi' ? _weekdaysHiFull : _weekdaysEnFull;
   return weekdays[date.weekday - 1];
 }
 
@@ -329,24 +311,4 @@ const List<String> _monthsHi = [
   '\u0905\u0915\u094d\u091f\u0942',
   '\u0928\u0935\u0902',
   '\u0926\u093f\u0938\u0902',
-];
-
-const List<String> _weekdaysEnFull = [
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday',
-];
-
-const List<String> _weekdaysHiFull = [
-  '\u0938\u094b\u092e\u0935\u093e\u0930',
-  '\u092e\u0902\u0917\u0932\u0935\u093e\u0930',
-  '\u092c\u0941\u0927\u0935\u093e\u0930',
-  '\u0917\u0941\u0930\u0941\u0935\u093e\u0930',
-  '\u0936\u0941\u0915\u094d\u0930\u0935\u093e\u0930',
-  '\u0936\u0928\u093f\u0935\u093e\u0930',
-  '\u0930\u0935\u093f\u0935\u093e\u0930',
 ];
