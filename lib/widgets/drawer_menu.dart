@@ -25,6 +25,10 @@ class DrawerMenu extends StatelessWidget {
         label: localization.translate('myPosters'),
       ),
       _DrawerItem(
+        icon: Icons.share_rounded,
+        label: localization.translate('shareApp'),
+      ),
+      _DrawerItem(
         icon: Icons.settings_rounded,
         label: localization.translate('settings'),
       ),

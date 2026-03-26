@@ -100,6 +100,10 @@ class AppLocalizations {
       'en': 'My Posters',
       'hi': '\u092e\u0947\u0930\u0947 \u092a\u094b\u0938\u094d\u091f\u0930',
     },
+    'shareApp': {
+      'en': 'Share App',
+      'hi': '\u090f\u092a \u0936\u0947\u092f\u0930 \u0915\u0930\u0947\u0902',
+    },
     'settings': {
       'en': 'Settings',
       'hi': '\u0938\u0947\u091f\u093f\u0902\u0917\u094d\u0938',
