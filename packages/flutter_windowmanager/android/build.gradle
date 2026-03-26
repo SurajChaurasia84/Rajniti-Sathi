@@ -1,14 +1,31 @@
-group = "io.adaptant.labs.flutter_windowmanager"
-version = "1.0"
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.11.1"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
 
 apply plugin: "com.android.library"
 
+group = "io.adaptant.labs.flutter_windowmanager"
+version = "1.0"
+
 android {
     namespace "io.adaptant.labs.flutter_windowmanager"
-    compileSdk = 36
+    compileSdk 36
 
     defaultConfig {
-        minSdk = 16
+        minSdk 16
     }
 
     compileOptions {
