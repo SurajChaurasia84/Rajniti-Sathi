@@ -54,7 +54,7 @@ class AppLocalizations {
     },
     'defaultDesignation': {
       'en': 'Your Designation',
-      'hi': '\u0906\u092a\u0915\u093e \u092a\u0926',
+      'hi': 'Your Designation',
     },
     'dragHint': {
       'en': 'Hold and drag photo',
@@ -123,6 +123,10 @@ class AppLocalizations {
     'about': {
       'en': 'About',
       'hi': '\u091c\u093e\u0928\u0915\u093e\u0930\u0940',
+    },
+    'versionLabel': {
+      'en': 'v',
+      'hi': 'v',
     },
     'futureFirebasePlaceholder': {
       'en': 'Backend-ready placeholder: replace local poster data here when Firebase or another source is connected.',

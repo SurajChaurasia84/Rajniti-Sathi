@@ -112,7 +112,8 @@ class DrawerMenu extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
               child: Text(
-                localization.translate('futureFirebasePlaceholder'),
+                '${localization.translate('versionLabel')} ${controller.appVersion}',
+                textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: AppColors.textSecondary,
                       height: 1.5,

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:rajniti_sathi/screens/home_screen.dart';
 import 'package:rajniti_sathi/screens/language_screen.dart';
 import 'package:rajniti_sathi/screens/splash_screen.dart';
@@ -13,7 +14,8 @@ import 'package:rajniti_sathi/utils/localization.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   _configureSystemUi();
-  runApp(RajnitiSathiApp(controller: AppController()));
+  final controller = await AppController.create();
+  runApp(RajnitiSathiApp(controller: controller));
   _secureScreen();
 }
 
@@ -122,7 +124,7 @@ class RajnitiSathiApp extends StatelessWidget {
 }
 
 class AppController extends ChangeNotifier {
-  AppController()
+  AppController._(this._appVersion)
       : _posters = const [
           PosterItem(
             id: 'poster-1',
@@ -186,12 +188,30 @@ class AppController extends ChangeNotifier {
           ),
         ];
 
+  static Future<AppController> create() async {
+    try {
+      final packageInfo = await PackageInfo.fromPlatform();
+      final version = packageInfo.version.trim().isEmpty
+          ? '1.0.0'
+          : packageInfo.version.trim();
+      final buildNumber = packageInfo.buildNumber.trim();
+      final displayVersion = buildNumber.isEmpty
+          ? version
+          : '$version+$buildNumber';
+      return AppController._(displayVersion);
+    } catch (_) {
+      return AppController._('1.0.0');
+    }
+  }
+
   final List<PosterItem> _posters;
+  final String _appVersion;
   String _languageCode = 'en';
   int _selectedDateIndex = 0;
 
   String get languageCode => _languageCode;
   int get selectedDateIndex => _selectedDateIndex;
+  String get appVersion => _appVersion;
   AppLocalizations get localizations => AppLocalizations(_languageCode);
   List<PosterItem> get posters => List.unmodifiable(_posters);
 

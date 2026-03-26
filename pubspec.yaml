@@ -33,6 +33,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.20.2
+  package_info_plus: ^8.3.0
   flutter_windowmanager:
     path: packages/flutter_windowmanager
 
