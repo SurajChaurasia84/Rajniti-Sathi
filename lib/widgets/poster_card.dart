@@ -325,16 +325,20 @@ class _ActionItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         onTap: onTap,
         child: Ink(
-          padding: const EdgeInsets.symmetric(vertical: 12),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
           decoration: BoxDecoration(
-            color: AppColors.primary.withValues(alpha: 0.08),
+            // color: AppColors.primary.withValues(alpha: 0.08),
             borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: AppColors.primary.withValues(alpha: 0.28),
+            ),
           ),
-          child: Column(
+          child: Row(
             mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(icon, color: AppColors.primary),
-              const SizedBox(height: 6),
+              const SizedBox(width: 6),
               Text(
                 label,
                 style: const TextStyle(
