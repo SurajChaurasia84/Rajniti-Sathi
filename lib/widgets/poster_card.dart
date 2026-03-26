@@ -94,15 +94,11 @@ class PosterCard extends StatelessWidget {
                                 color: Colors.white,
                                 shape: BoxShape.circle,
                               ),
-                              alignment: Alignment.center,
-                              child: Text(
-                                localization.translate('partyLogo'),
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                  color: AppColors.textPrimary,
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 11,
-                                  height: 1.05,
+                              padding: const EdgeInsets.all(6),
+                              child: ClipOval(
+                                child: Image.asset(
+                                  'assets/posters/bjp.png',
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
