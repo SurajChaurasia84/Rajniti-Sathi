@@ -30,6 +30,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
+            titleSpacing: 0,
             title: Text(
               localization.appTitle,
               style: theme.textTheme.titleLarge?.copyWith(
@@ -37,6 +38,44 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 4),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(999),
+                  onTap: () {},
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 6,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(999),
+                      border: Border.all(color: AppColors.border),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          'assets/posters/premium.png',
+                          width: 18,
+                          height: 18,
+                          fit: BoxFit.contain,
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          localization.translate('premium'),
+                          style: const TextStyle(
+                            color: AppColors.textPrimary,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
               IconButton(
                 tooltip: localization.translate('language'),
                 icon: const Icon(Icons.language_rounded),
