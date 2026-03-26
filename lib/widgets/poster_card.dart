@@ -12,8 +12,8 @@ class PosterCard extends StatelessWidget {
   final PosterItem poster;
   final AppController controller;
 
-  static const double _avatarWidth = 158;
-  static const double _avatarHeight = 214;
+  static const double _avatarWidth = 138;
+  static const double _avatarHeight = 188;
 
   @override
   Widget build(BuildContext context) {
