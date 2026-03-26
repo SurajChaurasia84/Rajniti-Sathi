@@ -48,6 +48,14 @@ class AppLocalizations {
       'en': 'Poster Feed',
       'hi': '\u092a\u094b\u0938\u094d\u091f\u0930 \u092b\u0940\u0921',
     },
+    'partyLogo': {
+      'en': 'PARTY\nLOGO',
+      'hi': '\u092a\u093e\u0930\u094d\u091f\u0940\n\u0932\u094b\u0917\u094b',
+    },
+    'defaultDesignation': {
+      'en': 'Your Designation',
+      'hi': '\u0906\u092a\u0915\u093e \u092a\u0926',
+    },
     'dragHint': {
       'en': 'Hold and drag photo',
       'hi': '\u092b\u094b\u091f\u094b \u0926\u092c\u093e\u0915\u0930 \u0916\u0940\u0902\u091a\u0947\u0902',
