@@ -74,7 +74,7 @@ class RajnitiSathiApp extends StatelessWidget {
             appBarTheme: const AppBarTheme(
               backgroundColor: AppColors.background,
               foregroundColor: AppColors.textPrimary,
-              centerTitle: true,
+              centerTitle: false,
               elevation: 0,
               scrolledUnderElevation: 0,
               systemOverlayStyle: SystemUiOverlayStyle(
