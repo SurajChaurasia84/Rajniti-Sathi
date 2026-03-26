@@ -156,7 +156,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 SliverPadding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+                  padding: const EdgeInsets.only(bottom: 24),
                   sliver: SliverList.separated(
                     itemCount: controller.posters.length,
                     itemBuilder: (context, index) {
@@ -167,7 +167,7 @@ class HomeScreen extends StatelessWidget {
                       );
                     },
                     separatorBuilder: (context, index) =>
-                        const SizedBox(height: 18),
+                        const SizedBox(height: 16),
                   ),
                 ),
               ],

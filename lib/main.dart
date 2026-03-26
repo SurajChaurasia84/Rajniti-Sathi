@@ -126,21 +126,63 @@ class AppController extends ChangeNotifier {
       : _posters = const [
           PosterItem(
             id: 'poster-1',
-            assetPath: 'assets/posters/poster1.png',
+            assetPath: 'assets/posters/p1.jpg',
             userName: 'Suraj',
             userImagePath: 'assets/user.png',
             imageOffset: Offset(28, 212),
             textColor: Colors.white,
             showNameBackground: true,
+            imageAspectRatio: 1282 / 1600,
           ),
           PosterItem(
             id: 'poster-2',
-            assetPath: 'assets/posters/poster2.png',
+            assetPath: 'assets/posters/p2.jpg',
             userName: 'Suraj',
             userImagePath: 'assets/user.png',
             imageOffset: Offset(212, 202),
             textColor: AppColors.textPrimary,
             showNameBackground: true,
+            imageAspectRatio: 1282 / 1600,
+          ),
+          PosterItem(
+            id: 'poster-3',
+            assetPath: 'assets/posters/p3.jpg',
+            userName: 'Suraj',
+            userImagePath: 'assets/user.png',
+            imageOffset: Offset(42, 212),
+            textColor: Colors.white,
+            showNameBackground: true,
+            imageAspectRatio: 1282 / 1600,
+          ),
+          PosterItem(
+            id: 'poster-4',
+            assetPath: 'assets/posters/p4.jpg',
+            userName: 'Suraj',
+            userImagePath: 'assets/user.png',
+            imageOffset: Offset(188, 214),
+            textColor: Colors.white,
+            showNameBackground: true,
+            imageAspectRatio: 1282 / 1600,
+          ),
+          PosterItem(
+            id: 'poster-5',
+            assetPath: 'assets/posters/p5.jpg',
+            userName: 'Suraj',
+            userImagePath: 'assets/user.png',
+            imageOffset: Offset(32, 214),
+            textColor: Colors.white,
+            showNameBackground: true,
+            imageAspectRatio: 1282 / 1600,
+          ),
+          PosterItem(
+            id: 'poster-6',
+            assetPath: 'assets/posters/p6.jpg',
+            userName: 'Suraj',
+            userImagePath: 'assets/user.png',
+            imageOffset: Offset(180, 210),
+            textColor: Colors.white,
+            showNameBackground: true,
+            imageAspectRatio: 2052 / 2560,
           ),
         ];
 
@@ -202,6 +244,7 @@ class PosterItem {
     required this.imageOffset,
     required this.textColor,
     required this.showNameBackground,
+    required this.imageAspectRatio,
   });
 
   final String id;
@@ -211,6 +254,7 @@ class PosterItem {
   final Offset imageOffset;
   final Color textColor;
   final bool showNameBackground;
+  final double imageAspectRatio;
 
   PosterItem copyWith({
     String? userName,
@@ -226,6 +270,7 @@ class PosterItem {
       imageOffset: imageOffset ?? this.imageOffset,
       textColor: textColor ?? this.textColor,
       showNameBackground: showNameBackground ?? this.showNameBackground,
+      imageAspectRatio: imageAspectRatio,
     );
   }
 }
