@@ -72,7 +72,7 @@ class RajnitiSathiApp extends StatelessWidget {
               surface: Colors.white,
             ),
             appBarTheme: const AppBarTheme(
-              backgroundColor: Colors.transparent,
+              backgroundColor: AppColors.background,
               foregroundColor: AppColors.textPrimary,
               centerTitle: true,
               elevation: 0,
