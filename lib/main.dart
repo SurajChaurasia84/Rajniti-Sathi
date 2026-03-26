@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:rajniti_sathi/screens/home_screen.dart';
+import 'package:rajniti_sathi/screens/language_screen.dart';
 import 'package:rajniti_sathi/screens/splash_screen.dart';
 import 'package:rajniti_sathi/utils/app_colors.dart';
 import 'package:rajniti_sathi/utils/localization.dart';
@@ -112,6 +113,7 @@ class RajnitiSathiApp extends StatelessWidget {
           home: SplashScreen(controller: controller),
           routes: {
             HomeScreen.routeName: (_) => HomeScreen(controller: controller),
+            LanguageScreen.routeName: (_) => LanguageScreen(controller: controller),
           },
         );
       },

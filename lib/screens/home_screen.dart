@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rajniti_sathi/main.dart';
+import 'package:rajniti_sathi/screens/language_screen.dart';
 import 'package:rajniti_sathi/utils/app_colors.dart';
 import 'package:rajniti_sathi/widgets/drawer_menu.dart';
 import 'package:rajniti_sathi/widgets/poster_card.dart';
@@ -36,20 +37,12 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             actions: [
-              PopupMenuButton<String>(
+              IconButton(
                 tooltip: localization.translate('language'),
                 icon: const Icon(Icons.language_rounded),
-                onSelected: controller.updateLanguage,
-                itemBuilder: (context) => [
-                  PopupMenuItem<String>(
-                    value: 'en',
-                    child: Text(localization.translate('english')),
-                  ),
-                  PopupMenuItem<String>(
-                    value: 'hi',
-                    child: Text(localization.translate('hindi')),
-                  ),
-                ],
+                onPressed: () {
+                  Navigator.of(context).pushNamed(LanguageScreen.routeName);
+                },
               ),
             ],
           ),
